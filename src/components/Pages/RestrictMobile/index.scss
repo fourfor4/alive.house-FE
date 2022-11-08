@@ -1,0 +1,46 @@
+.restrict_view_container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e8ece2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .restrict_view_logo_container {
+    width: 60%;
+    height: 20%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: flex-start;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .restrict_view_info_container {
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    h2 {
+      color: #242430;
+    }
+  }
+  .restrict_view_gif_container {
+    width: 90%;
+    height: 45%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: prod.js CI
+
+on:
+  push:
+    branches: [prod]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.14.2]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+    - run: npm install
+
+    - name: curl
+      uses: wei/curl@v1
+      with:
+        args: https://prod-cms.alive.house/api/unity-build/myBuild -o build.json
+    
+    
+    - shell: bash
+      id: set_var
+      run: |
+          content=`cat ./build.json`
+          # the following lines are only required for multi line json
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          # end of optional handling for multi line json
+          echo "::set-output name=packageJson::$content"
+    
+
+    - name: Create Constants
+      run: |
+        echo -e "\nVITE_UNITY_FOLDER_VERSION=${{secrets.PROD_BUILD_VERSION}}" >> ./.env.production
+        echo -e "\nVITE_CDN_BASE_URL=https://cdn.alive.house/frontend-ui/prod/${{fromJson(steps.set_var.outputs.packageJson).version}}" >> ./.env.production
+
+    
+    - run: npm run build:prod
+
+    - shell: bash
+      run: |
+         echo "${{fromJson(steps.set_var.outputs.packageJson).version}}"
+         echo "${{fromJson(steps.set_var.outputs.packageJson).url}}"
+    
+    - name: wget
+      uses: wei/wget@v1
+      with:
+        args: -O latestBuild.zip ${{fromJson(steps.set_var.outputs.packageJson).url}}
+
+    - name: Extract some files
+      run: 7z x latestBuild.zip
+    
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-south-1
+    - name: Deploy static site to S3 bucket
+      run: aws s3 sync ./latestBuild/ s3://alive-static-assets/frontend-ui/prod/${{fromJson(steps.set_var.outputs.packageJson).version}} --delete --acl public-read
+
+    - name: Deploy static assets to S3 bucket
+      run: aws s3 sync ./dist/assets s3://alive-static-assets/frontend-ui/prod/${{fromJson(steps.set_var.outputs.packageJson).version}}/assets --acl public-read
+        
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@5.1
+      with:
+        switches: -avzr --delete
+        path: ./dist/*
+        remote_path: /home/ubuntu/frontend-ui/dist
+        remote_host: 65.0.23.163
+        remote_user: ubuntu
+        remote_key: "${{ secrets.NEW_SSH_PRIVATE_KEY }}"

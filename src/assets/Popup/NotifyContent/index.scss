@@ -1,0 +1,19 @@
+.counter_div {
+  width: 90px;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border: 1px solid #000;
+  position: relative;
+
+  .number {
+    width: 100%;
+    height: fit-content;
+  }
+
+  p {
+    position: absolute;
+    left: 0;
+    top: -30%;
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "wordJSON": {
+    "worldBundleObjects": [
+      {
+        "objectName": "character and tools",
+        "objectTransform": {
+          "position": { "x": 141, "y": 0, "z": 0 },
+          "eulerAngles": { "x": 0, "y": 0, "z": 0 },
+          "localScale": { "x": 1, "y": 1, "z": 1 }
+        },
+        "bundleName": "character and tools_364286a23fd34959a74a623d25754639",
+        "bundleDependencies": [
+          "0_3_6_800e09c7ee794a34a2934b6d3e86092b",
+          "6_c43143bddcfa4dfa8d79301e7ded3676"
+        ]
+      },
+      {
+        "objectName": "videoplayer manager",
+        "objectTransform": {
+          "position": { "x": 0, "y": 0, "z": 0 },
+          "eulerAngles": { "x": 0, "y": 0, "z": 0 },
+          "localScale": { "x": 1, "y": 1, "z": 1 }
+        },
+        "bundleName": "videoplayer manager_e3283b62422e463dbc85c4a5d26a36c9",
+        "bundleDependencies": []
+      },
+      {
+        "objectName": "videoinfo",
+        "objectTransform": {
+          "position": {
+            "x": 0.0004227161407470703,
+            "y": 0.8569667935371399,
+            "z": 0.02588936686515808
+          },
+          "eulerAngles": { "x": 0, "y": 0, "z": 0 },
+          "localScale": { "x": 1, "y": 1, "z": 1 }
+        },
+        "bundleName": "videoinfo_7b14a526e6a84de58700a0ec1060b72d",
+        "bundleDependencies": []
+      },
+      {
+        "objectName": "bigtv",
+        "objectTransform": {
+          "position": { "x": -1675, "y": -8, "z": 1119 },
+          "eulerAngles": {
+            "x": 4.2688682810876344e-7,
+            "y": 22.649999618530273,
+            "z": 336.57000732421875
+          },
+          "localScale": { "x": 40, "y": 40, "z": 40 }
+        },
+        "bundleName": "bigtv_b63d33c60f8f4f9b98a4ed84e6a6a854",
+        "bundleDependencies": [
+          "0_3_cb8e6f943532498ab58aa0bdbff831a8",
+          "0_3_6_800e09c7ee794a34a2934b6d3e86092b",
+          "0_1_3_e61aee823caa4528939f8695fb4f8aca",
+          "1_3_78e38c19faa141dd95502b910e0cb271",
+          "3_95ff071beba344fd9b9e0952e333fe3d"
+        ]
+      },
+      {
+        "objectName": "avatar-2048494852",
+        "objectTransform": {
+          "position": { "x": 0, "y": 0, "z": 0 },
+          "eulerAngles": { "x": 0, "y": 0, "z": 0 },
+          "localScale": { "x": 1, "y": 1, "z": 1 }
+        },
+        "bundleName": "avatar-2048494852_7550e3e914974c088a797ac41e24deac",
+        "bundleDependencies": []
+      },
+      {
+        "objectName": "audio",
+        "objectTransform": {
+          "position": { "x": 0, "y": 0, "z": 0 },
+          "eulerAngles": { "x": 0, "y": 0, "z": 0 },
+          "localScale": { "x": 1, "y": 1, "z": 1 }
+        },
+        "bundleName": "audio_356eaaee44d34cbf88f3541413646dbf",
+        "bundleDependencies": [
+          "0_1_c5c166e2939f40e6ab10a97f65edcd47",
+          "0_1_3_e61aee823caa4528939f8695fb4f8aca",
+          "1_3_78e38c19faa141dd95502b910e0cb271"
+        ]
+      },
+      {
+        "objectName": "3handislandremeshdemo",
+        "objectTransform": {
+          "position": { "x": -2240, "y": 234, "z": -87 },
+          "eulerAngles": { "x": 0, "y": 0, "z": 0 },
+          "localScale": { "x": 1, "y": 1, "z": 1 }
+        },
+        "bundleName": "3handislandremeshdemo_d9f2679aba7641428434f80822786519",
+        "bundleDependencies": [
+          "0_3_cb8e6f943532498ab58aa0bdbff831a8",
+          "0_2c263c5f5b0643a9bd375259f7751a84",
+          "0_1_c5c166e2939f40e6ab10a97f65edcd47",
+          "0_3_6_800e09c7ee794a34a2934b6d3e86092b",
+          "0_1_3_e61aee823caa4528939f8695fb4f8aca"
+        ]
+      }
+    ],
+    "environmentSettings": {
+      "skyboxMaterialName": "Skybox_Huyana",
+      "isFogEnabled": true,
+      "fogColor": {
+        "r": 0.6697887182235718,
+        "g": 0.42322665452957153,
+        "b": 0.7573529481887817,
+        "a": 1
+      },
+      "fogMode": 2,
+      "fogDensity": 0.0010000000474974513,
+      "bundleName": "environment_0_6d14d979064f458f948982f47cdb8b2e"
+    }
+  },
+  "srt": "",
+  "mainSongLink": "https://alive-cms-dev.s3.ap-south-1.amazonaws.com/Huyana_Is_It_You_720df5b682.wav",
+  "mainVideoLink": "https://cdn.alive.house/artist/huyana/is-it-you/video/Huyana-IsItYou/dash/Huyana-IsItYou.mpd",
+  "mp3Links": {
+    "mp3Links": [
+      "https://cdn.alive.house/artist/huyana/is-it-you/mp3/v2/Huyana-IsItYou-Vx-Lead.mp3 ",
+      "https://cdn.alive.house/artist/huyana/is-it-you/mp3/v2/Huyana-IsItYou-Bass.mp3",
+      "https://cdn.alive.house/artist/huyana/is-it-you/mp3/v2/Huyana-IsItYou-Music.mp3",
+      "https://cdn.alive.house/artist/huyana/is-it-you/mp3/v2/Huyana-IsItYou-Rhythm.mp3",
+      "https://cdn.alive.house/artist/huyana/is-it-you/mp3/v2/Huyana-IsItYou-Vx-Backing.mp3"
+    ]
+  },
+  "mpdLinks": {
+    "mpdLinks": [
+      "https://cdn.alive.house/artist/huyana/is-it-you/video/Huyana-IsItYou-BTS/dash/Huyana-IsItYou-BTS.mpd",
+      "https://cdn.alive.house/artist/huyana/is-it-you/video/Huyana-IsItYou-live-2/dash/Huyana-IsItYou-live-2.mpd"
+    ]
+  }
+}

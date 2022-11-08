@@ -1,0 +1,86 @@
+.signup_wallet_container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+
+  .signup_wallet_container_box {
+    width: 40.7%;
+    height: 38%;
+    background-color: #53e1ad;
+    border: 0.1rem solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 3%;
+    position: relative;
+    transform: translateX(0.1rem);
+
+    .wallet_signup_back_option {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20%;
+      height: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      // cursor: pointer;
+
+      .wallet_signup_back_option_img {
+        width: 30%;
+        height: 40%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      span {
+        font-size: 1.7rem;
+        font-weight: 800;
+      }
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-top: 7%;
+    }
+    .wallet_signup_option {
+      width: 70%;
+      height: 35%;
+      border: 0.1rem solid #000;
+      background-color: #fbd200;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      // cursor: pointer;
+
+      .wallet_signup_option_img {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+
+        img {
+          width: 90%;
+          height: 90%;
+          object-fit: contain;
+        }
+      }
+      .wallet_signup_option_info {
+        margin-left: 1rem;
+
+        h2 {
+          font-size: 2.3rem;
+        }
+        h3 {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
